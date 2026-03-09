@@ -59,24 +59,12 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Links */}
-        <div className="desktop-nav" style={{ display: "flex", alignItems: "center", gap: 36 }}>
+        <div className="desktop-nav">
           {NAV_LINKS.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              style={{
-                background: "none",
-                border: "none",
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: 13,
-                fontWeight: 500,
-                color: "rgba(245,240,232,0.55)",
-                cursor: "pointer",
-                letterSpacing: "0.04em",
-                textTransform: "uppercase",
-                padding: "4px 0",
-                transition: "color 0.3s ease",
-              }}
+              className="nav-button"
               onMouseEnter={(e) => (e.target.style.color = "#D4A853")}
               onMouseLeave={(e) => (e.target.style.color = "rgba(245,240,232,0.55)")}
             >
@@ -89,13 +77,6 @@ export default function Navbar() {
         <button
           className="mobile-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{
-            background: "none",
-            border: "none",
-            color: "#D4A853",
-            cursor: "pointer",
-            padding: 8,
-          }}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

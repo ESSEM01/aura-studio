@@ -69,16 +69,44 @@ textarea::placeholder {
 /* ─── Responsive Nav ──────────────────────────────────────────────────── */
 .desktop-nav {
   display: flex;
-}
-.mobile-toggle {
-  display: none;
+  align-items: center;
+  gap: 36px;
 }
 
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none !important;
-  }
-  .mobile-toggle {
-    display: block !important;
-  }
+.nav-button {
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(245, 240, 232, 0.55);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-button:hover {
+  color: #D4A853;
+}
+
+.mobile-toggle {
+  background: none;
+  border: none;
+  color: #D4A853;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Stili per Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
